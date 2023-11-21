@@ -14,6 +14,11 @@ function Textutils(props) {
         let newText = text.toUpperCase();
         setText(newText);
     }
+    const handleLoClick = ()=>{
+        // console.log('Upper case cllicked' + text);
+        let newText = text.toLowerCase();
+        setText(newText);
+    }
 
     return (
         <>
@@ -25,6 +30,13 @@ function Textutils(props) {
             </div>
             <div className="container">
                 <button className="btn btn-sm btn-primary" onClick={handleUpClick}>Convert to Uppercase</button>
+                <button className="btn btn-sm btn-primary mx-2" onClick={handleLoClick}>Convert to Lowercase</button>
+            </div>
+            <div className="container my-3">
+                <h1>Your Text Summary</h1>
+                <p>{text.split(" ").length} words and {text.length} characters in your text. You need {text.split(" ").length*.008} minutes to complete reading the text.</p>
+                <h1 className='my-2'>Text Preview</h1>
+                <p>{text}</p>
             </div>
 
         </>
